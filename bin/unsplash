@@ -2,7 +2,7 @@
 
 RESOLUTION=$(xrandr --current | grep '*' | uniq | awk '{print $1}')
 # You can obtain an Unsplash access key from https://unsplash.com/developers
-ACCESS_KEY="YOUR_ACCESS_KEY"
+ACCESS_KEY="iGDGwXLI_kp9FBr5FNJ2qGjD1yi-B_asVdC8YjJUfPU"
 URL="https://api.unsplash.com/photos/random?collections=1053828&orientation=landscape"
 DIR="$HOME/.local/share/unsplash"
 
@@ -10,7 +10,7 @@ mkdir -p "$DIR"
 
 # Fetch a random photo from Unsplash
 RESPONSE=$(curl -H "Authorization: Client-ID ${ACCESS_KEY}" "$URL")
-DOWNLOAD_LINK=$(echo "$RESPONSE" | fx "(x) => x.links.download")
+DOWNLOAD_LINK=$(echo "$RESPONSE" | jq -r ".links.download")
 wget "$DOWNLOAD_LINK" -O "$DIR"/image.jpg
 
 # Convert to png

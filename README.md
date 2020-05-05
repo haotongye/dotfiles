@@ -15,7 +15,10 @@ The config file can be found [here](nvim)
 
 ## Lock Screen
 ![neovim](screenshots/lock.png)
-The shell script can be found [here](bin/lock). It uses
-[i3lock-color](https://github.com/Raymo111/i3lock-color). Every time the screen is
-locked, a random photo from [Unsplash](https://unsplash.com/) will be set as the
-background image.
+
+### Requirements
+- [i3lock-color](https://github.com/Raymo111/i3lock-color)
+- [jq](https://stedolan.github.io/jq/)
+
+The shell script can be found [here](bin/lock). Every time the screen is locked, a
+random photo from [Unsplash](https://unsplash.com/) will be set as the background image.

@@ -30,5 +30,5 @@ i3lock -t -i "$UNSPLASH_DIR"/image.png \
     --bshlcolor=$bshlcolor --noinputtext=''
 
 if ping -q -c 1 -W 1 8.8.8.8 >/dev/null; then
-    unsplash &
+    unsplash > $HOME/.local/share/unsplash/log 2>&1 &
 fi
