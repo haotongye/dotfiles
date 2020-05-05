@@ -1,0 +1,5 @@
+[user]
+	name = Hao-Tong Ye
+	email = haotongye@gmail.com
+[core]
+	excludesfile = ~/.gitignore_global

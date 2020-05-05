@@ -1,0 +1,15 @@
+changeps1: false
+
+create_default_packages:
+  - pip
+  - ipython
+  - tqdm
+  - python-box
+  - ipdb
+  - pyyaml
+  - ipdb
+
+channels:
+  - pytorch
+  - defaults
+  - conda-forge

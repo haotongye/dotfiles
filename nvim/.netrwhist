@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/aye/.tmux'
+let g:netrw_dirhist_2='/etc/X11/xorg.conf.d'
+let g:netrw_dirhist_1='/etc/systemd/network'

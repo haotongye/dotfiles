@@ -1,0 +1,16 @@
+set theme classic
+
+unmap All <Up>
+unmap All <Down>
+unmap All <Left>
+unmap All <Right>
+unmap All q
+unmap All gt
+unmap All gT
+unmap All ;
+
+map All <Left> <grv-prev-tab>
+map All <Right> <grv-next-tab>
+map All ; <grv-prompt>
+map All q <grv-exit>
+map All x <grv-remove-view>

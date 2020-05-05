@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+if type nvidia-smi 2>/dev/null; then
+    if [[ $(nvidia-smi --query-compute-apps=pid --format=csv,noheader | wc -l) -eq 0 ]]; then
+        lock
+        systemctl suspend
+    else
+        lock
+    fi
+else
+    lock
+    systemctl suspend
+fi

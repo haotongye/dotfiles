@@ -1,0 +1,8 @@
+configuration {
+	modi: "drun,ssh,combi";
+    combi-modi: "drun,ssh";
+    font: "SauceCodePro Nerd Font 12";
+    terminal: "alacritty";
+    hide-scrollbar: true;
+    theme: "Arc-Dark";
+}

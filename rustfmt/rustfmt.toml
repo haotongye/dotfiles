@@ -1,0 +1,10 @@
+unstable_features = true
+
+wrap_comments = true
+comment_width = 88
+max_width = 88
+error_on_unformatted = true
+error_on_line_overflow = true
+format_strings = true
+
+condense_wildcard_suffixes = true

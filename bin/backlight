@@ -1,0 +1,17 @@
+#! /usr/bin/env bash
+
+
+DELTA=$1
+
+DIR=/sys/class/backlight/intel_backlight
+MAX=$(cat "$DIR"/max_brightness)
+CURRENT=$(cat "$DIR"/brightness)
+
+NEW=$((CURRENT + DELTA))
+if [[ $NEW -lt 0 ]]; then
+	NEW=0
+fi
+if [[ $NEW -gt $MAX ]]; then
+	NEW=$MAX
+fi
+echo $NEW > $DIR/brightness

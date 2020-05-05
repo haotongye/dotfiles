@@ -1,0 +1,4 @@
+[style]
+allow_split_before_dict_value = False
+column_limit = 88
+split_complex_comprehension = True
