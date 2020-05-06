@@ -1,20 +1,32 @@
 # i3 config file (v4)
 
-# color
-# class                 border  bground text    indicator child_border
-client.focused          #272A34 #383C4A #5294E2 #00FF00   #00FF00
-client.focused_inactive #272A34 #2F343F #999999 #00FF00   #00FF00
-client.unfocused        #272A34 #2F343F #999999 #00FF00   #00FF00
-client.urgent           #CC575D #CC575D #FFFFFF #00FF00   #00FF00
-client.placeholder      #000000 #000000 #000000 #000000   #000000
-client.background       #000000
-
-
 # set Win key as the mod key
 set $mod Mod4
 
+# color
+# class                 border  bground text    indicator child_border
+# client.focused          #272A34 #383C4A #5294E2 #000000   #000000
+# client.focused_inactive #272A34 #2F343F #999999 #000000   #000000
+# client.unfocused        #272A34 #2F343F #999999 #000000   #000000
+# client.urgent           #272A34 #CC575D #FFFFFF #000000   #000000
+# client.placeholder      #000000 #000000 #000000 #000000   #000000
+# client.background       #000000
+
 # set font
-font pango:Noto Sans 10
+# font pango:Noto Sans 10
+
+# Use this setting of colors and font to minimize tab
+# color
+# class                 border  bground text    indicator child_border
+client.focused          #5294E2 #5294E2 #5294E2 #000000   #000000
+client.focused_inactive #272A34 #2F343F #2F343F #000000   #000000
+client.unfocused        #272A34 #2F343F #2F343F #000000   #000000
+client.urgent           #CC575D #CC575D #CC575D #000000   #000000
+client.placeholder      #000000 #000000 #000000 #000000   #000000
+client.background       #000000
+
+# set font
+font pango:Noto Sans 0
 
 # disable window border
 default_border none
