@@ -25,6 +25,9 @@ client.urgent           #CC575D #CC575D #CC575D #000000   #000000
 client.placeholder      #000000 #000000 #000000 #000000   #000000
 client.background       #000000
 
+gaps inner 20
+gaps top 50
+
 # set font
 font pango:Noto Sans 0
 
@@ -129,11 +132,13 @@ bindsym $mod+Shift+s exec $HOME/.local/bin/suspend
 # rofi
 bindsym $mod+Return exec rofi -show combi
 
+exec picom
 exec nautilus
 exec alacritty
 exec firefox
 exec station
 exec spotify
+exec $HOME/.dotfiles/polybar/launch.sh
 
 exec --no-startup-id i3-msg 'workspace 2;'
-exec loginctl lock-session
+exec $HOME/.local/bin/lock
