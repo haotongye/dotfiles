@@ -19,6 +19,8 @@ insidewrongcolor=00000000
 keyhlcolor=AAAAAAFF
 bshlcolor=AAAAAAFF
 
+feh --bg-scale $HOME/.local/share/unsplash/image.png
+
 i3lock -t -i "$UNSPLASH_DIR"/image.png \
     --clock --force-clock --timepos="w/2:h/2" --timesize=96 --timecolor=FFFFFFFF \
     --datestr="$DATE" --datepos="tx:ty+80" --datesize=32 --datecolor=FFFFFFFF \
