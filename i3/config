@@ -138,7 +138,7 @@ exec alacritty
 exec firefox
 exec station
 exec spotify
-exec $HOME/.dotfiles/polybar/launch.sh
+exec $HOME/.config/polybar/launch.sh
 
 exec --no-startup-id i3-msg 'workspace 2;'
 exec $HOME/.local/bin/lock
