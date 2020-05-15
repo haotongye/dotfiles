@@ -132,6 +132,7 @@ bindsym $mod+Shift+s exec $HOME/.local/bin/suspend
 # rofi
 bindsym $mod+Return exec rofi -show combi
 
+exec picom
 exec nautilus
 exec alacritty
 exec firefox
