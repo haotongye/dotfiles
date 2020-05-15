@@ -127,7 +127,7 @@ bindsym $mod+greater exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2
 bindsym $mod+Shift+x exec $HOME/.local/bin/lock
 
 # suspend
-bindsym $mod+Shift+s exec $HOME/.local/bin/suspend
+bindsym $mod+Shift+s exec $HOME/.local/bin/lock -s
 
 # rofi
 bindsym $mod+Return exec rofi -show combi
