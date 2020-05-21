@@ -132,7 +132,7 @@ bindsym $mod+Shift+s exec $HOME/.local/bin/lock -s
 # rofi
 bindsym $mod+Return exec rofi -show combi
 
-exec picom
+exec picom --experimental-backends --backend glx
 exec nautilus
 exec alacritty
 exec firefox

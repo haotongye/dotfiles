@@ -34,7 +34,7 @@ else
     ARGS=""
 fi
 
-i3lock "$ARGS" -t -i "$UNSPLASH_DIR"/image.png \
+i3lock "$ARGS" -t -i "$UNSPLASH_DIR"/image_dark_blur.png \
     --clock --force-clock --timepos="w/2:h/2" --timesize=96 --timecolor=FFFFFFFF \
     --datestr="$DATE" --datepos="tx:ty+80" --datesize=32 --datecolor=FFFFFFFF \
     --indpos="w/2-r/2:h-r*2" --radius 20 \

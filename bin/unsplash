@@ -21,4 +21,4 @@ rm "$DIR"/image.jpg
 convert "$DIR"/image.png -resize "$RESOLUTION"^ -gravity center -extent "$RESOLUTION" "$DIR"/image.png
 
 # Darken and blur
-convert "$DIR"/image.png -fill black -colorize 20% -blur 0x8 "$DIR"/image.png
+convert "$DIR"/image.png -fill black -colorize 20% -blur 0x8 "$DIR"/image_dark_blur.png
