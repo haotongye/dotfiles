@@ -25,8 +25,8 @@ client.urgent           #CC575D #CC575D #CC575D #000000   #000000
 client.placeholder      #000000 #000000 #000000 #000000   #000000
 client.background       #000000
 
-gaps inner 20
-gaps top 50
+# gaps inner 20
+# gaps top 50
 
 # set font
 font pango:Noto Sans 0
@@ -51,6 +51,10 @@ bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
+
+# move window to monitor
+bindsym $mod+Shift+greater move container to output right
+bindsym $mod+Shift+less move container to output left
 
 # split in horizontal orientation
 bindsym $mod+b split h
@@ -96,7 +100,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 assign [class="Nautilus"] → 1
 assign [class="Alacritty"] → 2
 assign [class="firefox"] → 3
-assign [class="Station"] → 4
+assign [class="Ferdi"] → 4
 for_window [class="Spotify"] move to workspace 5
 
 # reload the configuration file
@@ -136,9 +140,9 @@ exec picom
 exec nautilus
 exec alacritty
 exec firefox
-exec station
+exec ferdi
 exec spotify
-exec $HOME/.config/polybar/launch.sh
+# exec $HOME/.config/polybar/launch.sh
 
 exec --no-startup-id i3-msg 'workspace 2;'
 exec $HOME/.local/bin/lock

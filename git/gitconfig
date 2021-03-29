@@ -1,5 +1,18 @@
 [user]
 	name = Hao-Tong Ye
 	email = haotongye@gmail.com
+
 [core]
 	excludesfile = ~/.gitignore_global
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    features = line-numbers decorations
+    whitespace-error-style = 22 reverse
+    syntax-theme = Solarized (dark)
+
+[delta "decorations"]
+    file-style = bold yellow ul

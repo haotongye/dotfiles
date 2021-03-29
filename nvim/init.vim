@@ -387,7 +387,7 @@ set background=dark
 colorscheme NeoSolarized
 
 " line indicators
-set colorcolumn=89
+set colorcolumn=101
 set cursorline
 highlight CursorLine guibg=11
 
