@@ -1,5 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =3
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/home/aye/Projects/LeetCode/.git'
+let g:netrw_dirhist_6='/home/aye/.config/yapf'
+let g:netrw_dirhist_5='/etc/fonts/conf.avail'
+let g:netrw_dirhist_4='/home/aye/.config/fontconfig'
 let g:netrw_dirhist_3='/home/aye/.tmux'
 let g:netrw_dirhist_2='/etc/X11/xorg.conf.d'
 let g:netrw_dirhist_1='/etc/systemd/network'

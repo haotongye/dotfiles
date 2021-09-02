@@ -1,0 +1,71 @@
+-- My custom Solarized Dark theme
+local colors = {
+  base03  =  '#002b36',
+  base02  =  '#073642',
+  base01  =  '#586e75',
+  base00  =  '#657b83',
+  base0   =  '#839496',
+  base1   =  '#93a1a1',
+  base2   =  '#eee8d5',
+  base3   =  '#fdf6e3',
+  yellow  =  '#b58900',
+  orange  =  '#cb4b16',
+  red     =  '#dc322f',
+  magenta =  '#d33682',
+  violet  =  '#6c71c4',
+  blue    =  '#268bd2',
+  cyan    =  '#2aa198',
+  green   =  '#859900',
+}
+
+local solarized_dark = {
+    normal = {
+        a = {fg = colors.base3, bg = colors.base1, gui = 'bold'},
+        b = {fg = colors.base3, bg = colors.base00},
+        c = {fg = colors.base1, bg = colors.base02}
+    },
+    insert = {a = {fg = colors.base3, bg = colors.yellow, gui = 'bold'}},
+    visual = {a = {fg = colors.base3, bg = colors.magenta, gui = 'bold'}},
+    replace = {a = {fg = colors.base3, bg = colors.red, gui = 'bold'}},
+    inactive = {
+        a = {fg = colors.base0, bg = colors.base02, gui = 'bold'},
+        b = {fg = colors.base03, bg = colors.base00},
+        c = {fg = colors.base01, bg = colors.base02}
+    }
+}
+
+-- Source for diff component, using https://github.com/lewis6991/gitsigns.nvim
+local function diff_source()
+    local gitsigns = vim.b.gitsigns_status_dict
+    if gitsigns then
+        return {
+            added = gitsigns.added,
+            modified = gitsigns.changed,
+            removed = gitsigns.removed
+        }
+  end
+end
+
+-- Airline-like location component
+local function position()
+    local totalLines = vim.api.nvim_buf_line_count(vim.fn.winbufnr(vim.g.statusline_winid))
+    return [[☰ %3P/]]..totalLines..[[  %3l:%-2c]]
+end
+
+require('lualine').setup {
+  options = {
+    icons_enabled = true,
+    theme = solarized_dark,
+    component_separators = {'', ''},
+    section_separators = {'', ''}
+  },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'filetype', {'filename', symbols = {modified = ' ', readonly = ' '}}},
+    lualine_c = {{'encoding', upper = true}, 'fileformat'},
+    lualine_x = {{'diff', source = diff_source, symbols = {added = ' ', modified = ' ', removed = ' '}}, 'branch'},
+    lualine_y = {'diagnosis'},
+    -- lualine_z = {'progress', {'location', icon = ''}}
+    lualine_z = {position}
+  },
+}

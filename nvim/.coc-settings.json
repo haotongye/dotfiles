@@ -1,0 +1,21 @@
+{
+    "explorer.position": "right",
+    "explorer.icon.enableNerdfont": true,
+    "explorer.icon.source": "vim-devicons",
+    "coc.preferences.formatOnSaveFiletypes": [
+        "json",
+        "python",
+        "javascript",
+        "typescript",
+        "rust"
+    ],
+    "python.pythonPath": "~/.miniconda3/bin/python",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.formatting.provider": "yapf",
+    "clangd.semanticHighlighting": true,
+    "prettier.printWidth": 100,
+    "prettier.tabWidth": 4,
+    "rust-analyzer.server.path": "/usr/bin/rust-analyzer"
+}

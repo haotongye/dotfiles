@@ -1,6 +1,8 @@
 scriptencoding = 'utf-8'
 let g:loaded_python_provider = 1
 let g:python3_host_prog = expand('$HOME/.miniconda3/bin/python')
+let g:polyglot_disabled = ['tex']
+
 
 
 """"""""""""
@@ -82,6 +84,17 @@ let maplocalleader = '\'
 
 " vimtex
 let g:vimtex_view_method = 'zathura'
+let g:tex_flavor = 'latex'
+let g:vimtex_compiler_progname = 'nvr'
+let g:vimtex_compiler_latexmk = { 
+        \ 'executable' : 'latexmk',
+        \ 'options' : [ 
+        \   '-xelatex',
+        \   '-file-line-error',
+        \   '-synctex=1',
+        \   '-interaction=nonstopmode',
+        \ ],
+        \}
 
 " airline
 set laststatus=2
@@ -110,7 +123,7 @@ let g:airline#extensions#tabline#show_close_button = 0
 let g:airline#extensions#tmuxline#enabled = 0
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#hunks#enabled = 1
-" let g:airline#extensions#coc#enabled = 1
+let g:airline#extensions#coc#enabled = 1
 
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#ale#error_symbol = 'E:'
@@ -260,13 +273,11 @@ let g:ale_linters = {
     \ 'sh': ['shellcheck'],
     \ 'vim': ['vint'],
     \ 'yaml': ['yamllint'],
-    \ 'python': ['isort', 'flake8'],
-    \ 'rust': ['cargo', 'rustc', 'rls', 'rustfmt'] }
+    \ 'python': ['isort', 'flake8'] }
 let g:ale_fixers = {
     \ '*': ['remove_trailing_lines', 'trim_whitespace'],
     \ 'sh': ['shfmt'],
-    \ 'python': ['isort', 'yapf'] ,
-    \ 'rust': ['rustfmt'] }
+    \ 'python': ['isort', 'yapf'] }
 let g:ale_rust_rls_toolchain = 'stable'
 let g:ale_rust_rls_config = {
     \ 'rust': {
@@ -387,7 +398,7 @@ set background=dark
 colorscheme NeoSolarized
 
 " line indicators
-set colorcolumn=89
+set colorcolumn=101
 set cursorline
 highlight CursorLine guibg=11
 
