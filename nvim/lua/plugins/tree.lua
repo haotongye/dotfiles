@@ -61,7 +61,7 @@ utils.map("i", "<C-_>", "<ESC>:NvimTreeToggle<CR>")
 
 local tree_cb = require("nvim-tree.config").nvim_tree_callback
 vim.g.nvim_tree_bindings = {
-	{ key = "<C-h>", cb = tree_cb("vsplit") },
-	{ key = "<C-v>", cb = tree_cb("split") },
+	{ key = "h", cb = tree_cb("vsplit") },
+	{ key = "v", cb = tree_cb("split") },
 	{ key = "I", cb = tree_cb("toggle_ignored") },
 }
