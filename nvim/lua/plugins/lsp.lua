@@ -1,5 +1,8 @@
+local cmd = vim.cmd
 local utils = require("utils")
+local colors = require("colors")
 local lsp = require("lspconfig")
+local lspcolors = require("lsp-colors")
 
 local on_attach = function(client, bufnr)
 	-- Completion
@@ -75,3 +78,63 @@ lsp.sumneko_lua.setup({
 
 -- Bash
 lsp.bashls.setup({ on_attach = on_attach })
+
+-- Diagnostic Signs
+cmd([[sign define LspDiagnosticsSignError text= texthl=LspDiagnosticsSignError linehl= numhl=]])
+cmd([[sign define LspDiagnosticsSignWarning text= texthl=LspDiagnosticsSignWarning linehl= numhl=]])
+cmd([[sign define LspDiagnosticsSignInformation text= texthl=LspDiagnosticsSignInformation linehl= numhl=]])
+cmd([[sign define LspDiagnosticsSignHint text= texthl=LspDiagnosticsSignHint linehl= numhl=]])
+
+-- lspkind
+require("lspkind").init({
+	-- enables text annotations
+	--
+	-- default: true
+	with_text = true,
+
+	-- default symbol map
+	-- can be either 'default' (requires nerd-fonts font) or
+	-- 'codicons' for codicon preset (requires vscode-codicons font)
+	--
+	-- default: 'default'
+	preset = "default",
+
+	-- override preset symbols
+	--
+	-- default: {}
+	symbol_map = {
+		Text = "",
+		Method = "",
+		Function = "",
+		Constructor = "",
+		Field = "ﰠ",
+		Variable = "",
+		Class = "ﴯ",
+		Interface = "",
+		Module = "",
+		Property = "ﰠ",
+		Unit = "塞",
+		Value = "",
+		Enum = "",
+		Keyword = "",
+		Snippet = "",
+		Color = "",
+		File = "",
+		Reference = "",
+		Folder = "",
+		EnumMember = "",
+		Constant = "",
+		Struct = "פּ",
+		Event = "",
+		Operator = "",
+		TypeParameter = "",
+	},
+})
+
+-- Colors
+require("lsp-colors").setup({
+	Error = colors.red,
+	Warning = colors.yellow,
+	Information = colors.blue,
+	Hint = colors.cyan,
+})

@@ -1,4 +1,4 @@
-utils = require("utils")
+local utils = require("utils")
 
 -- Leader
 vim.g.mapleader = ","

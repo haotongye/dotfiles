@@ -12,6 +12,7 @@ local ui = {
 		branch = "main",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 	},
+	"norcalli/nvim-colorizer.lua",
 	--[[ "vim-airline/vim-airline",
 	"vim-airline/vim-airline-themes", ]]
 	{
@@ -24,10 +25,19 @@ local ui = {
 			"nvim-lua/plenary.nvim",
 		},
 	},
+	"lukas-reineke/indent-blankline.nvim",
 	{
 		"ms-jpq/chadtree",
 		branch = "chad",
 		run = ":CHADdeps",
+	},
+	{
+		"kyazdani42/nvim-tree.lua",
+		requires = "kyazdani42/nvim-web-devicons",
+	},
+	{
+		"folke/trouble.nvim",
+		requires = "kyazdani42/nvim-web-devicons",
 	},
 }
 
@@ -37,11 +47,12 @@ local language = {
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 	},
+	"onsails/lspkind-nvim",
+	"folke/lsp-colors.nvim",
 	"TovarishFin/vim-solidity",
 }
 
 local editing = {
-	"phaazon/hop.nvim",
 	"easymotion/vim-easymotion",
 	{
 		"b3nj5m1n/kommentary",
@@ -49,6 +60,7 @@ local editing = {
 			vim.g.kommentary_create_default_mappings = false
 		end,
 	},
+	{ "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" },
 	"nvim-lua/completion-nvim",
 	"steelsojka/completion-buffers",
 	"nvim-treesitter/completion-treesitter",
@@ -62,9 +74,6 @@ local other = {
 		requires = { "nvim-lua/plenary.nvim" },
 	},
 }
-
--- tabline
--- file explorer
 
 local packer = require("packer")
 local plugins = {}

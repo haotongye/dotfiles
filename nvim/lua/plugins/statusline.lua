@@ -121,19 +121,18 @@ section.left[4] = {
 		highlight = { fileinfo.get_file_icon_color },
 	},
 }
-
 section.left[5] = {
 	DiagnosticHint = {
 		provider = "DiagnosticHint",
-		icon = "ﴞ ",
-		highlight = { colors.yellow },
+		icon = " ",
+		highlight = { colors.cyan },
 	},
 }
 
 section.left[6] = {
 	DiagnosticInfo = {
 		provider = "DiagnosticInfo",
-		icon = " ",
+		icon = " ",
 		highlight = { colors.blue },
 	},
 }
@@ -141,15 +140,15 @@ section.left[6] = {
 section.left[7] = {
 	DiagnosticWarn = {
 		provider = "DiagnosticWarn",
-		icon = " ",
-		highlight = { colors.orange },
+		icon = " ",
+		highlight = { colors.yellow },
 	},
 }
 
 section.left[8] = {
 	DiagnosticError = {
 		provider = "DiagnosticError",
-		icon = " ",
+		icon = " ",
 		highlight = { colors.red },
 	},
 }
@@ -246,18 +245,11 @@ section.right[7] = {
 }
 
 -- Short line
-gl.short_line_list = { "LuaTree", "CHADTree" }
+gl.short_line_list = { "LuaTree", "CHADTree", "NvimTree" }
 
 section.short_line_left[1] = {
-	BufferType = {
-		provider = "FileIcon",
-		condition = condition.buffer_not_empty,
-		highlight = { fileinfo.get_file_icon_color },
-	},
-}
-
-section.short_line_left[2] = {
 	SFileName = {
+		condition = condition.buffer_not_empty,
 		provider = function()
 			local fname = fileinfo.get_current_file_name()
 			for _, v in ipairs(gl.short_line_list) do
@@ -267,15 +259,14 @@ section.short_line_left[2] = {
 			end
 			return fname
 		end,
-		condition = condition.buffer_not_empty,
 	},
 }
 
---[[ section.short_line_right[1] = {
-  BufferIcon = {
-    provider = "BufferIcon",
-  }
-} ]]
+section.short_line_right[1] = {
+	BufferIcon = {
+		provider = "BufferIcon",
+	},
+}
 
 --[[ local buf_icon = {
   help             = '  ',
